@@ -14,13 +14,14 @@ import java.io.IOException;
 
 public class FractalTree extends PApplet {
 
-private double fractionLength = .8f; 
+private double fractionLength = .9f; 
 private int smallestBranch = 10; 
 private double branchAngle = .4f;  
 public double trunkL = 0;
 public void setup() 
 {   
-	size(640,480);    
+	size(640,480);   
+	strokeWeight(2); 
 	//noLoop(); 
 } 
 public void draw() 
@@ -30,6 +31,7 @@ public void draw()
 	line(320,480,320,(float)(480-trunkL));   
 	drawBranches(320,(int)(480-trunkL),trunkL,3*Math.PI/2);
 	trunkL+=0.1f;
+	println(frameRate);
 } 
 public void drawBranches(int x,int y, double branchLength, double angle) 
 {   
